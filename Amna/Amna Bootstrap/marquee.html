@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marquee Examples</title>
+    <style>
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee p {
+            display: inline-block;
+            padding-left: 100%; /* Initial position off-screen */
+            animation: marquee 10s linear infinite; /* Animation: name duration timing-function iteration-count */
+        }
+
+        .marquee-fast p {
+            animation-duration: 5s; /* Faster scrolling */
+        }
+
+        .marquee-slow p {
+            animation-duration: 20s; /* Slower scrolling */
+        }
+
+        @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* For the bouncing text effect */
+        .marquee-bounce p {
+            animation: marquee-bounce 5s linear infinite;
+        }
+
+        @keyframes marquee-bounce {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Basic Marquee</h2>
+    <div class="marquee"><p>Simple scrolling text.</p></div>
+
+    <h2>Marquee with Increased Speed</h2>
+    <div class="marquee marquee-fast"><p>Faster scrolling text.</p></div>
+
+    <h2>Marquee Moving to the Left</h2>
+    <div class="marquee"><p>This text scrolls from right to left.</p></div>
+
+    <h2>Marquee with Bouncing Behavior</h2>
+    <div class="marquee marquee-bounce"><p>Bouncing text from side to side.</p></div>
+
+    <h2>Marquee with a Defined Scroll Delay</h2>
+    <div class="marquee marquee-slow"><p>Text with a slower scroll effect.</p></div>
+
+    
+</body>
+</html>
